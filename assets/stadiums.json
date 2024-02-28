@@ -1,0 +1,55 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+    {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+            "coordinates": [
+            -122.30178241260103,
+            47.65038961468116
+            ],
+            "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Allegiant"
+        },
+        "geometry": {
+          "coordinates": [
+            -115.18346930014644,
+            36.09077350677752
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Caesar"
+        },
+        "geometry": {
+          "coordinates": [
+            -90.08114398882383,
+            29.9511291309622
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "NRG"
+        },
+        "geometry": {
+          "coordinates": [
+            -95.41070950995892,
+            29.68494941799871
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }
