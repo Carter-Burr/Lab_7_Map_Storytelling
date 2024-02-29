@@ -171,7 +171,13 @@
           'source': 'states',
           'minzoom': 3,
           'paint': {
-            'fill-color': '#0080ff',
+            'fill-color': [
+              'match',
+              ['get', 'played'],
+              1, 'gray',  // If 'played' is 1, color it gray
+              2, 'purple',  // If 'played' is 2, color it purple
+              'transparent'  // Default color
+            ],
             'fill-opacity': 0.5
           }
         }
