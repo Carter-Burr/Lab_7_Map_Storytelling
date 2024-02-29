@@ -113,7 +113,7 @@ body,
 #houston {
   position: relative;
   max-width: 40rem;
-  max-height: 33rem;
+  /* min-height: 40rem; */
   /* margin: 0 auto 0 auto; */
   margin: 0 auto 0 4rem;
   padding: 0;
@@ -124,7 +124,18 @@ body,
 #WA {
   position: relative;
   max-width: 40rem;
-  max-height: 39rem;
+  min-height: 40rem;
+  /* margin: 0 auto 0 auto; */
+  margin: 0 auto 0 4rem;
+  padding: 0;
+  color: #fff;
+  background-color: rgba(225, 97, 249, 0.5);
+}
+
+#lasvegas {
+  position: relative;
+  max-width: 40rem;
+  min-height: 40rem;
   /* margin: 0 auto 0 auto; */
   margin: 0 auto 0 4rem;
   padding: 0;
@@ -135,7 +146,7 @@ body,
 #newOr {
   position: relative;
   max-width: 40rem;
-  max-height: 38rem;
+  min-height: 38rem;
   /* margin: 0 auto 0 auto; */
   margin: 0 auto 0 4rem;
   padding: 0;
@@ -150,6 +161,7 @@ body,
   /* margin: 0 auto 0 auto; */
   margin: 0 auto 0 4rem;
   padding: 0;
+  margin-bottom: 0;
   color: #fff;
   background-color: rgba(225, 97, 249, 0.5);
 }

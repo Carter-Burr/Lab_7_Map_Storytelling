@@ -46,10 +46,10 @@
     <article class="scene" id="WA" data-scene="1">
       <h2>Huksy Stadium</h2>
         <p>This is when the Huskies won all of their Home Games and played an Undefeated Season. Many Consider this to be the greatest setting in all of College Football</p>
-        <img src="img/huskyStadium.jpg"></img>
+        <img width="30%" src="img/huskyStadium.jpg"></img>
         <p id="cite"> Credit to Zane Lindsay linked <a id="UW-Image" href="https://unsplash.com/photos/gray-concrete-building-under-blue-sky-during-daytime-YdtbVz42mdA"> Here </a></p>
     </article>
-    <article class="scene" data-scene="2">
+    <article class="scene" id="lasvegas" data-scene="2">
       <h2>The Pac-12 Championship</h2>
         <p>First, we will go through the Huskies posteason locations. To start of the postseason the Huskies won the Pac-12 Championship in Allegiant Stadium, Las Vegas. They beat Oregon 34-31 to Win the Pac-12 Title!</p>
         <img style="width: 95%;" src="img/allegiant.jpg"></img>
@@ -63,18 +63,20 @@
     </article>
     <article class="scene" id="houston" data-scene="4">
       <h2>Last Stop: The National Championship</h2>
-      <p> ADD INFO HERE</p>
+      <p> After a long fought season, the Huskies finally made it to the National Championship game. Unfortuantely, the Huskies were not able to walk away with a victory, falling to Michigan 34-13</p>
       <img style="width: 95%;" src="img/NRG.jpg"></img>
       <p id="cite"> Photo by juan mendez from Pexels: <a id="Houston" href="https://www.pexels.com/photo/aerial-view-of-downtown-houston-texas-at-night-15353653/"> Here </a></p>
     </article>
     <article class="scene" data-scene="5">
-      <h2>States Played in </h2>
-      <p> SOMETHING HERE TOO </p>
+      <h2>Final Overview of the Season </h2>
+      <p> The Huskies played in a lot of different States throughout the football season. This map shows all of the states that the Huskies play a game in, indicated by being highlighted in purple. </p>
     </article>
   </section>
 
   <section id="footer">
-    <h2>FOOTER</h2>
+    <h2> </h2>
+    <p> Point Data created by Carter Burr </p>
+    <p> State data from <a id="footer" href="https://eric.clst.org/tech/usgeojson/"> Eric Tech</a> </p>
   </section>
 
 
@@ -172,7 +174,7 @@
           'id': 'state-polygons',
           'type': 'fill',
           'source': 'states',
-          'minzoom': 3,
+          'minzoom': 2,
           'paint': {
             'fill-color': [
               'match',
@@ -258,8 +260,8 @@
           } else if (index === 4) {
             //Relocate to Portland
             map.flyTo({
-              center: [-109.5, 37.68],
-              zoom: 4,
+              center: [-109.5, 40.68],
+              zoom: 3.5,
               pitch: 20,
               speed: 0.5
 
