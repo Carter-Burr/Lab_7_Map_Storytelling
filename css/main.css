@@ -18,7 +18,7 @@ body,
 
 #footer {
   width: 100%;
-  height: 30vh;
+  height: 10vh;
   color: white;
   background: #fff;
   background-color: rgba(0, 0, 0, 0.3);
@@ -103,13 +103,56 @@ body,
 }
 
 
-[data-scene="5"] img {
+.scene img {
   display: block;
   margin: 2rem auto 0 auto;
-  width: 90%;
+  width: 50%;
   border: 5px solid white;
 }
 
+#houston {
+  position: relative;
+  max-width: 40rem;
+  max-height: 33rem;
+  /* margin: 0 auto 0 auto; */
+  margin: 0 auto 0 4rem;
+  padding: 0;
+  color: #fff;
+  background-color: rgba(225, 97, 249, 0.5);
+}
+
+#WA {
+  position: relative;
+  max-width: 40rem;
+  max-height: 39rem;
+  /* margin: 0 auto 0 auto; */
+  margin: 0 auto 0 4rem;
+  padding: 0;
+  color: #fff;
+  background-color: rgba(225, 97, 249, 0.5);
+}
+
+#newOr {
+  position: relative;
+  max-width: 40rem;
+  max-height: 38rem;
+  /* margin: 0 auto 0 auto; */
+  margin: 0 auto 0 4rem;
+  padding: 0;
+  color: #fff;
+  background-color: rgba(225, 97, 249, 0.5);
+}
+
+[data-scene="5"] {
+  position: relative;
+  max-width: 30rem;
+  max-height: 40rem;
+  /* margin: 0 auto 0 auto; */
+  margin: 0 auto 0 4rem;
+  padding: 0;
+  color: #fff;
+  background-color: rgba(225, 97, 249, 0.5);
+}
 
 #tooltip h3 {
   color: black;
@@ -123,4 +166,9 @@ body,
 #introLink {
   color: aqua;
   font-size: 16px;
+}
+
+#cite {
+  font-size: 12px;
+  align-items: center;
 }
