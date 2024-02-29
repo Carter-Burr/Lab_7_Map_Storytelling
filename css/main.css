@@ -102,9 +102,6 @@ body,
   text-shadow: 0 0 6px white;
 }
 
-[data-scene="4"] div {
-  font-size: xxx-large;
-}
 
 [data-scene="5"] img {
   display: block;
@@ -113,15 +110,6 @@ body,
   border: 5px solid white;
 }
 
-[data-scene="6"] {
-  background: url("../img/background.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin: 0 auto 0 auto !important;
-  height: 100vh !important;
-}
 
 #tooltip h3 {
   color: black;

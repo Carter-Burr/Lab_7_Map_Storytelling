@@ -61,7 +61,7 @@
       <h2>Last Stop: The National Championship</h2>
     </article>
     <article class="scene" data-scene="4">
-      <h2>STEP 6: Image </h2>
+      <h2>States Played in </h2>
       <img src="img/pie_chartt.jpg"></img>
     </article>
     <article class="scene fullscreen" data-scene="6">
@@ -133,7 +133,12 @@
     async function geojsonFetch() {
 
       // 6 wait till the data of washington state and county are fully loaded.
-  
+      let response, state, county;
+      response = await fetch("assets/stadiums.json");
+      stadium = await response.json();
+      response = await fetch("assets/States_Played.json");
+      state = await response.json();
+
 
       // 7. Trigger operations inside of the the ()=> {} funciton while loading the map.
       map.on('load', () => {
@@ -141,18 +146,35 @@
         // 8. add map source and declare layers.
         map.addSource('stadiums', {
           type: 'geojson',
-          data: 'assets/stadiums.json'
+          data: stadium
         });
 
-        map.addLayer({
-          'id': 'Stadiums',
+
+        map.addSource('states', {
+          type: 'geojson',
+          data: state
+        });
+
+        stadiumPoints = {
+          'id': 'stadium-points',
           'type': 'circle',
           'source': 'stadiums',
           'paint': {
               'circle-radius': 10,
               'circle-color': 'purple'
             }
-        });
+        }
+
+        stateLayer = {
+          'id': 'state-polygons',
+          'type': 'fill',
+          'source': 'states',
+          'minzoom': 3,
+          'paint': {
+            'fill-color': '#0080ff',
+            'fill-opacity': 0.5
+          }
+        }
 
         // 9. Initialize the script panel
         scriptPanel
@@ -177,6 +199,20 @@
               pitch: 0,
               speed: 0.5
             }); // fly to a new location
+
+            if (typeof (map.getSource('stadiums')) == 'undefined') { //if the map source 'state-src' does not exist
+              map.addSource('stadiums', {
+                type: 'geojson',
+                data: stadium
+              }); // reload the map source of 'state-src'
+            } else {
+              map.getSource('stadiums').setData(stadium); // if the map source does not exist, relaod the data state to the pre-defined map source 'state-src'.
+
+            }
+
+            if (!map.getLayer("stadium-points")) { // if the map layer 'state-polygons' does not exit
+              map.addLayer(stadiumPoints);
+            }
             
             document.getElementById("cover").style.visibility = "hidden"; // Hide the cover page
 
@@ -208,8 +244,37 @@
               speed: 0.5
 
             });
+            
  // change the base map
-          } 
+          } else if (index === 4) {
+            //Relocate to Portland
+            map.flyTo({
+              center: [-109.5, 37.68],
+              zoom: 4,
+              pitch: 20,
+              speed: 0.5
+
+            });
+            map.removeLayer("stadium-points");
+
+            if (typeof (map.getSource('states')) == 'undefined') { //if the map source 'state-src' does not exist
+              map.addSource('states', {
+                type: 'geojson',
+                data: state
+              }); // reload the map source of 'state-src'
+            } else {
+              map.getSource('states').setData(state); // if the map source does not exist, relaod the data state to the pre-defined map source 'state-src'.
+
+            }
+
+            if (!map.getLayer("state-polygons")) { // if the map layer 'state-polygons' does not exit
+              map.addLayer(stateLayer);
+            }
+
+
+
+          }
+ // change the
         }
 
         // 11. This function performs when a scene exists the storyboard
@@ -226,6 +291,27 @@
             
           } else if (index === 2) {
             
+          } else if (index === 3) {
+          
+          } else if (index === 4) {
+
+            if (response.direction == 'up') { 
+              map.removeLayer("state-polygons");
+              if (typeof (map.getSource('stadiums')) == 'undefined') { //if the map source 'state-src' does not exist
+              map.addSource('stadiums', {
+                type: 'geojson',
+                data: stadium
+              }); // reload the map source of 'state-src'
+            } else {
+              map.getSource('stadiums').setData(stadium); // if the map source does not exist, relaod the data state to the pre-defined map source 'state-src'.
+
+            }
+
+            if (!map.getLayer("stadium-points")) { // if the map layer 'state-polygons' does not exit
+              map.addLayer(stadiumPoints);
+            }
+            }
+
           } 
         }
 
